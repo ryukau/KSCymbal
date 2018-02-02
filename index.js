@@ -57,6 +57,7 @@ function makeWave() {
       sampleRate: audioContext.sampleRate,
       // overSampling: checkboxResample.value ? 16 : 1,
       overSampling: 1,
+      minFrequency: inputMinFrequency.value,
       maxFrequency: inputMaxFrequency.value,
       seed: inputSeed.value + inputSeed.max * ch,
       stack: inputStackCount.value,
@@ -190,6 +191,8 @@ var inputFadeOut = new NumberInput(divEnvGainControls.element,
 
 var divPluckControls = new Div(divControlLeft.element, "pluckControls")
 var headingPluck = new Heading(divPluckControls.element, 6, "Pluck")
+var inputMinFrequency = new NumberInput(divPluckControls.element,
+  "MinFrequency", 0, 0, 1000, 0.001, refresh)
 var inputMaxFrequency = new NumberInput(divPluckControls.element,
   "MaxFrequency", 200, 10, 1000, 0.001, refresh)
 var inputDistance = new NumberInput(divPluckControls.element,
