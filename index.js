@@ -113,12 +113,21 @@ function randomRange(min, max) {
 }
 
 function random() {
-  if (pullDownMenuRandomType.value === "something") {
+  if (pullDownMenuRandomType.value === "Seed") {
+    inputSeed.random()
   }
   else {
     // "All" case.
+    inputFadeIn.random()
+    inputFadeOut.random()
+
+    inputMinFrequency.random()
+    inputMaxFrequency.random()
+    inputDistance.random()
     inputSeed.random()
-    // inputPickCombTime.random()
+    inputStackCount.random()
+    inputPickCombFeedback.random()
+    inputPickCombTime.random()
   }
   refresh()
 }
@@ -160,6 +169,7 @@ var buttonRandom = new Button(divRenderControls.element, "Random",
   () => random())
 var pullDownMenuRandomType = new PullDownMenu(divRenderControls.element, null,
   () => { })
+pullDownMenuRandomType.add("Seed")
 pullDownMenuRandomType.add("All")
 var buttonSave = new Button(divRenderControls.element, "Save",
   () => save(wave))
