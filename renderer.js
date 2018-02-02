@@ -129,12 +129,11 @@ class RCHP {
 //   sampleRate,
 //   overSampling,
 //   maxFrequency,
+//   distance,
 //   seed,
 //   stack,
-//   pickTime,
 //   pickCombFB,
 //   pickCombTime,
-//   distance,
 // }
 
 onmessage = (event) => {
